@@ -1,0 +1,14 @@
+version: '3.9'
+
+services:
+  db:
+    image: postgres
+    restart: always
+    environment:
+      - POSTGRES_DB=mcat
+      - POSTGRES_USER=prisma
+      - POSTGRES_PASSWORD=secretpassword
+    volumes:
+      - ./data/db:/var/lib/postgresql/data
+    ports:
+      - 54321:5432
